@@ -9,6 +9,11 @@ class Song extends Component {
         }, function () {
             $(this).removeClass('flip');
         });
+        $('.hover').on('click', (function () {
+            if($(this).hasClass('flip')){
+                $(this).removeClass('flip'); 
+            }
+        }));
     }
     render() {
         let imageMeta = this.props.data["im:image"][2];
