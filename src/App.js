@@ -33,9 +33,9 @@ class App extends Component {
     let filteredList;
     if(searchString) {
       filteredList = list.filter((songInfoObj) => {
-        console.log(songInfoObj);
         let title = songInfoObj["im:name"].label.toLowerCase();
-        return title.includes(searchString);
+        let artist = songInfoObj["im:artist"].label.toLowerCase();
+        return title.includes(searchString) || artist.includes(searchString);
       })
     }
     else {
